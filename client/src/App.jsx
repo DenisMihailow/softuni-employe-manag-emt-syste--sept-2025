@@ -1,10 +1,15 @@
+import Footer from "./components/Footer.jsx"
+import Header from "./components/Header.jsx"
+
 function App() {
 
   return (
-    <div>
-        <h1>Hello Hasmi</h1>
-    </div>
+    <main>
+      <Header />
+
+      <Footer />
+    </main>
   )
-}
+} 
 
 export default App

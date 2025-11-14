@@ -3,11 +3,7 @@
    <body>
 
    
-  <header className="header">
-    <div className="logo">
-      <span className="course">React Exercise - Components Deep Dive</span>
-    </div>
-  </header>
+  
 
   {/* <!-- Main component  --> */}
   <main className="main">
@@ -420,8 +416,6 @@
     </div>
 
   </main>
-  <footer className="footer">
-    <p>This site is designed to be used for training purposes at SoftUni.</p>
-  </footer>
+  
 </body>
 // </html>
