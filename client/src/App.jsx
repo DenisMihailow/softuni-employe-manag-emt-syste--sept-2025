@@ -9,6 +9,8 @@ import CreateUserModal from "./components/CreateUserModal.jsx"
 //в   server/data/user.json //тук може като върне резултата от postman да се сложи тук резултата да може след рестарт на server да има дадения резултат пак
 function App() {
  const [users, setUsers] = useState([]);
+ const [showCreatedUser, setShowCreatedUser] = useState(false);
+const [forceRefresh,setForceRefresh] = useState(true);
 
   useEffect(() => {
         fetch('http://localhost:3030/jsonstore/users')
@@ -17,9 +19,9 @@ function App() {
           setUsers(Object.values(result));          
         })
         .catch((err)=> alert(err.message));
-  },[]);
+  },[forceRefresh]);//forceRefresh towa igrae rolyata na refresh
 
-  const [showCreatedUser, setShowCreatedUser] = useState(false);
+ 
 
   const addUserClickHandler = () => {
     setShowCreatedUser(true);
@@ -42,7 +44,7 @@ function App() {
         };
 
         userData.createdAt = new Date().toISOString();
-        userData.createdAt = new Date().toISOString();
+        userData.updateAt = new Date().toISOString();
 
         fetch('http://localhost:3030/jsonstore/users',{
           method:'POST',
@@ -51,11 +53,12 @@ function App() {
           },
           body: JSON.stringify(userData)
         })
-        .then(response => response.json())
-        .then(result => {
-          console.log(result);
+        .then(() =>  {
+          closeUserModalHandler();
+          setForceRefresh(state => !state)
           
         })
+        .catch(err => alert(err.message));
     }
 
   return (
