@@ -10,7 +10,7 @@ import CreateUserModal from "./components/CreateUserModal.jsx"
 function App() {
  const [users, setUsers] = useState([]);
  const [showCreatedUser, setShowCreatedUser] = useState(false);
-const [forceRefresh,setForceRefresh] = useState(true);
+const [refresh,setRefresh] = useState(true);
 
   useEffect(() => {
         fetch('http://localhost:3030/jsonstore/users')
@@ -19,9 +19,11 @@ const [forceRefresh,setForceRefresh] = useState(true);
           setUsers(Object.values(result));          
         })
         .catch((err)=> alert(err.message));
-  },[forceRefresh]);//forceRefresh towa igrae rolyata na refresh
+  },[refresh]);//forceRefresh towa igrae rolyata na refresh
 
- 
+ const forceUserRefresh = () => {
+  setRefresh(state => !state);
+ }
 
   const addUserClickHandler = () => {
     setShowCreatedUser(true);
@@ -55,7 +57,7 @@ const [forceRefresh,setForceRefresh] = useState(true);
         })
         .then(() =>  {
           closeUserModalHandler();
-          setForceRefresh(state => !state)
+         forceUserRefresh();
           
         })
         .catch(err => alert(err.message));
@@ -68,7 +70,7 @@ const [forceRefresh,setForceRefresh] = useState(true);
       <main className="main">
         <section className="card users-container">
           <Search />
-          <UserList users={users}/>
+          <UserList users={users} forceUserRefresh= {forceUserRefresh}/>
 
 
           <button className="btn-add btn" onClick={addUserClickHandler}> Add new user</button>
