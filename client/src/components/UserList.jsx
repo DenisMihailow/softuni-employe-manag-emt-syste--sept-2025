@@ -5,7 +5,7 @@ export default function UserList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-        fetch('http:/localhost:3030/jsonstore/users')
+        fetch('http://localhost:3030/jsonstore/users')
         .then(response => response.json())
         .then(result => {
           setUsers(Object.values(result));          
@@ -70,7 +70,7 @@ export default function UserList() {
             </tr>
           </thead>
           <tbody>
-            {users.map(user => <UserItem  key={user._id} />)}
+            {users.map(user => <UserItem  key={user._id} {...user} />)}
           </tbody>
         </table>
         <button className="btn-add btn">Add new user</button>
