@@ -46,5 +46,21 @@
       "street": "456 Elm St",
       "streetNumber": "7"
     }
+  },
+  "b9675377-9e76-4562-856a-abc74af20152": {
+    "_id": "b9675377-9e76-4562-856a-abc74af20152",
+    "firstName": "Deko",
+    "lastName": "Mihailow",
+    "email": "dekko@abv.bg",
+    "phoneNumber": "4884",
+    "createdAt": "2025-11-01T07:22:00.358Z",
+    "updatedAt": "2025-11-01T07:22:00.358Z",
+    "imageUrl": "https://www.google.com/search?q=got&client=firefox-b-d&sca_esv=052283a6d4230c4d&udm=2&biw=1920&bih=929&sxsrf=AE3TifMYvy7vKiTVBHNOLW0DbUL8pXLq7A%3A1763408425939&ei=KXobaezkOIWI7NYPneimiQk&ved=0ahUKEwisncmm-PmQAxUFBNsEHR20KZEQ4dUDCBI&uact=5&oq=got&gs_lp=Egtnd3Mtd2l6LWltZyIDZ290MgsQABiABBixAxiDATIFEAAYgAQyBRAAGIAEMgsQABiABBixAxiDATIFEAAYgAQyDhAAGIAEGLEDGIMBGIoFMgoQABiABBhDGIoFMg4QABiABBixAxiDARiKBTIFEAAYgAQyBRAAGIAESJktUJMIWKUicAt4AJABAJgBmwGgAegIqgEDOS4zuAEDyAEA-AEBmAIXoALMCagCCsICBhAAGAcYHsICCBAAGIAEGLEDwgIHECMYJxjJAsICDRAAGIAEGLEDGEMYigXCAgoQIxgnGMkCGOoCmAMFiAYBkgcEMTkuNKAHulGyBwM4LjS4B5sJwgcGMC4zLjIwyAdR&sclient=gws-wiz-img#vhid=2TRXTqaX0fv4FM&vssid=mosaic",
+    "address": {
+      "country": "Bulgaria",
+      "city": "Yambol",
+      "street": "Ruen",
+      "streetNumber": "14"
+    }
   }
 }
