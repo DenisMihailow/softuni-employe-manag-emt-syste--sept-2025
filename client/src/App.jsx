@@ -4,7 +4,7 @@ import Header from "./components/Header.jsx"
 import Pagination from "./components/Pagination.jsx"
 import Search from "./components/Search.jsx"
 import UserList from "./components/UserList.jsx"
-import CreateUser from "./components/CreateUser.jsx"
+import CreateUserModal from "./components/CreateUserModal.jsx"
 
 function App() {
 
@@ -12,7 +12,12 @@ function App() {
 
   const addUserClickHandler = () => {
     setShowCreatedUser(true);
-  }
+  };
+
+    const closeUserModalHandler = () => {
+      setShowCreatedUser(false)
+    };
+
   return (
     <div>
       <Header />
@@ -27,7 +32,7 @@ function App() {
 
           <Pagination />
         </section>
-        {showCreatedUser && <CreateUser />}
+        {showCreatedUser && <CreateUserModal onClose={closeUserModalHandler}/>}
       </main>
       <Footer />
     </div>
