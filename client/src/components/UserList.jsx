@@ -76,7 +76,7 @@ export default function UserList({
             </tr>
           </thead>
           <tbody>
-            {users.map(user => <UserItem  key={user._id} {...user} onDetailsClick={detailsActionClickHandler}/>)}
+            {users.map(user => <UserItem {...user} key={user._id}  onDetailsClick={detailsActionClickHandler}/>)}
           </tbody>
         </table>
 
