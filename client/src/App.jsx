@@ -4,7 +4,7 @@ import Header from "./components/Header.jsx"
 import Pagination from "./components/Pagination.jsx"
 import Search from "./components/Search.jsx"
 import UserList from "./components/UserList.jsx"
-import CreateUserModal from "./components/CreateUserModal.jsx"
+import UserSaveModal from "./components/UserSaveModal.jsx"
 
 //в   server/data/user.json //тук може като върне резултата от postman да се сложи тук резултата да може след рестарт на server да има дадения резултат пак
 function App() {
@@ -77,7 +77,7 @@ const [refresh,setRefresh] = useState(true);
 
           <Pagination />
         </section>
-        {showCreatedUser && <CreateUserModal 
+        {showCreatedUser && <UserSaveModal 
         onClose={closeUserModalHandler}
         onSubmit={addUserSubmitHandler}
 
