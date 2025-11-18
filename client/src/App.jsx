@@ -33,6 +33,10 @@ const [refresh,setRefresh] = useState(true);
       setShowCreatedUser(false)
     };
 
+      const sortUserHandler = () => {
+          setUsers(state => [...state].sort((userA,userB) => new Date(userB.createdAt) - new Date(userA.createdAt)))
+      }
+
     const addUserSubmitHandler = (event) => {
         event.preventDefault();
         const formDate = new FormData(event.target);
@@ -70,7 +74,7 @@ const [refresh,setRefresh] = useState(true);
       <main className="main">
         <section className="card users-container">
           <Search />
-          <UserList users={users} forceUserRefresh= {forceUserRefresh}/>
+          <UserList users={users} forceUserRefresh= {forceUserRefresh} onSort = {sortUserHandler} />
 
 
           <button className="btn-add btn" onClick={addUserClickHandler}> Add new user</button>
